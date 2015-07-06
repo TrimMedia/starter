@@ -3,7 +3,7 @@ title: Starter
 email: info@trim.media
 description: > # this means to ignore newlines until "baseurl:"
   Starter helps startups get professional design services for their business.
-baseurl: ""
+baseurl: "/starter"
 url: "http://starter.design"
 
 exclude: ['css/src', 'package.json', '/node_modules', 'gruntfile.js', 'npm-debug.log', 'Gemfile', 'Gemfile.lock'] 
