@@ -1,6 +1,6 @@
 *, *:before, *:after {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@ html{
 	line-height: 1.5em;
 	color: #696969;
 	text-rendering: optimizeLegibility;
- 	-webkit-font-smoothing: antialiased;
+ 	font-smoothing: antialiased;
 }
 	@media (min-width: 600px) {
 		html{
@@ -32,7 +32,6 @@ html{
 	}
 
 body{
-	border: 1px solid;
 	background: white;
 }
 
@@ -184,14 +183,15 @@ svg > *{
 	width: 165%;
 	max-height: 400px;
 	background: white;
+	animation: 1s ease;
 }
 	@media (min-width: 600px) {
 		.dollar,
 		.key,
 		.question{
 			position: static;
-			opacity: 1;
 			width: 90%;
+			opacity: 0;
 			transform: none;
 		}
 	}
@@ -221,7 +221,7 @@ svg > *{
 	position: absolute;
 	opacity: 0;
 	background: white;
-	-webkit-transform: all 1s ease;
+	transform: all 2s ease;
 }
 	@media (min-width: 800px) {
 		.checklist-cta__bg{
@@ -232,12 +232,12 @@ svg > *{
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 		}
 	}
 
 .checklist-cta__bg > *{
-	-webkit-animation: 15s ease infinite;
+	animation: 15s ease infinite;
 }
 
 .pricing__art--intro,
@@ -352,7 +352,7 @@ svg > *{
 	top: -7.5em;
 	left: -12.5em;
 	background: #52CBC9;
-	-webkit-animation: 15s ease infinite;
+	animation: 15s ease infinite;
 }
 	@media (min-width: 1000px) {
 		.intro__circle--title{
@@ -366,8 +366,8 @@ svg > *{
 	top: 18em;
 	right: 1em;
 	background: #FE6669;
-	-webkit-animation-name: inherit;
-	-webkit-animation: 12.5s ease infinite;
+	animation-name: inherit;
+	animation: 12.5s ease infinite;
 }
 	@media (min-width: 400px) {
 		.intro__circle--section{
@@ -403,15 +403,25 @@ svg > *{
 	top: -30em;
 	left: 15%;
 	background: #FE6669;
-	-webkit-animation: 10s ease infinite;
+	animation: 10s ease infinite;
 }
 
 .is--floating,
 .is--floating > *{
-	-webkit-animation-name: float;
+	animation-name: float;
+
 }
-	@-webkit-keyframes float {
-    	from { -webkit-transform: rotate(0deg) translateX(2%) rotate(0deg); }
-    	to   { -webkit-transform: rotate(360deg) translateX(2%) rotate(-360deg); }
-	}	
+	@keyframes float {
+    	from { transform: rotate(0deg) translateX(2%) rotate(0deg); }
+    	to   { transform: rotate(360deg) translateX(2%) rotate(-360deg); }
+	}
+
+.is--animated{
+	animation-name: fade-in;
+	opacity: 1;
+}	
+	@keyframes fade-in {
+    	from { opacity: 0; transform: translateY(3em); }
+    	to   { opacity: 1; transform: translateY(0);}
+	}
 
