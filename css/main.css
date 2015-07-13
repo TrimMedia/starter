@@ -750,6 +750,7 @@ svg > *{
 	position: absolute;
 	opacity: 0;
 	background: white;
+	-webkit-transform: all 1s ease;
 }
 	@media (min-width: 800px) {
 		.checklist-cta__bg{
@@ -764,6 +765,10 @@ svg > *{
 			-webkit-transform: translate(-50%, -50%);
 		}
 	}
+
+.checklist-cta__bg > *{
+	-webkit-animation: 15s ease infinite;
+}
 
 .pricing__art--intro,
 .main__art--footer{
@@ -881,6 +886,7 @@ svg > *{
 	top: -7.5em;
 	left: -12.5em;
 	background: #52CBC9;
+	-webkit-animation: 15s ease infinite;
 }
 	@media (min-width: 1000px) {
 		.intro__circle--title{
@@ -894,6 +900,8 @@ svg > *{
 	top: 18em;
 	right: 1em;
 	background: #FE6669;
+	-webkit-animation-name: inherit;
+	-webkit-animation: 12.5s ease infinite;
 }
 	@media (min-width: 400px) {
 		.intro__circle--section{
@@ -929,5 +937,15 @@ svg > *{
 	top: -30em;
 	left: 15%;
 	background: #FE6669;
+	-webkit-animation: 10s ease infinite;
 }
+
+.is--floating,
+.is--floating > *{
+	-webkit-animation-name: float;
+}
+	@-webkit-keyframes float {
+    	from { -webkit-transform: rotate(0deg) translateX(2%) rotate(0deg); }
+    	to   { -webkit-transform: rotate(360deg) translateX(2%) rotate(-360deg); }
+	}	
 

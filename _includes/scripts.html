@@ -1,0 +1,41 @@
+<script type="text/javascript">
+	// Grab as much info as possible 
+	// outside the scroll handler for performace reasons.
+	var intro              = document.querySelector('.intro'),
+	    intro_location     = intro.getBoundingClientRect(),
+	    intro_art          = document.querySelector('.intro__art').children,
+	    checklist          = document.querySelector('.checklist-cta__bg'),
+	    checklist_location = checklist.getBoundingClientRect(),
+	    isFloating         = 'is--floating';
+
+	console.log(intro_location.top, window.innerWidth)
+
+	function toggleAnimation() {
+		// Intro Animation
+		if(window.pageYOffset > topOfElement(intro_location) && window.pageYOffset < intro_location.bottom) {
+			console.log('success!');
+			for (var i = 0; i < intro_art.length; i++) {
+				intro_art[i].classList.add(isFloating);
+			};
+		}
+		else{
+			for (var i = 0; i < intro_art.length; i++) {
+				intro_art[i].classList.remove(isFloating);
+			};
+		}
+		// CTA Animation
+		if(window.pageYOffset > topOfElement(checklist_location) && window.pageYOffset < checklist_location.bottom) {
+			checklist.classList.add(isFloating);
+		}
+		else{
+			checklist.classList.remove(isFloating);
+		}
+	}
+
+	function topOfElement(e){
+		return e.top - window.innerHeight
+	}
+
+	// Scroll handler to toggle classes.
+	window.addEventListener('scroll', toggleAnimation);
+</script>
