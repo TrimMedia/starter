@@ -966,11 +966,13 @@ svg > *{
     	from { -webkit-transform: rotate(0deg) translateX(2%) rotate(0deg); transform: rotate(0deg) translateX(2%) rotate(0deg); }
     	to   { -webkit-transform: rotate(360deg) translateX(2%) rotate(-360deg); transform: rotate(360deg) translateX(2%) rotate(-360deg); }
 	}
-
-.is--animated{
-	-webkit-animation-name: fade-in;
-	        animation-name: fade-in;
-	opacity: 1;
+	
+@media (min-width: 600px) {
+	.is--animated{
+		-webkit-animation-name: fade-in;
+		        animation-name: fade-in;
+		opacity: 1;
+	}
 }	
 	@-webkit-keyframes fade-in {
     	from { opacity: 0; -webkit-transform: translateY(3em); transform: translateY(3em); }

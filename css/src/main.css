@@ -415,10 +415,12 @@ svg > *{
     	from { transform: rotate(0deg) translateX(2%) rotate(0deg); }
     	to   { transform: rotate(360deg) translateX(2%) rotate(-360deg); }
 	}
-
-.is--animated{
-	animation-name: fade-in;
-	opacity: 1;
+	
+@media (min-width: 600px) {
+	.is--animated{
+		animation-name: fade-in;
+		opacity: 1;
+	}
 }	
 	@keyframes fade-in {
     	from { opacity: 0; transform: translateY(3em); }
