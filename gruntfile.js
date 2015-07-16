@@ -11,13 +11,16 @@ module.exports = function(grunt) {
                     'css/src/grid.css',
                     'css/src/main.css'
                 ],
-                dest: 'css/main.css',
+                dest: 'css/src/concat.css',
             }
         },
         autoprefixer: {
+            options: {
+              browsers: ['last 5 versions']
+            },
             dist: {
                 files: {
-                    'css/main.css': 'css/main.css'
+                    'css/main.css': 'css/src/concat.css'
                 }
             }
         },
@@ -26,7 +29,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'css',
-                    src: ['main.css'],
+                    src: 'main.css',
                     dest: 'css',
                     ext: '.min.css'
                 }]

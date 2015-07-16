@@ -1,18 +1,5 @@
 <script type="text/javascript">
-	// Grab as much info as possible 
-	// outside the scroll handler for performace reasons.
-	var intro              = document.querySelector('.intro'),
-	    intro_location     = intro.getBoundingClientRect(),
-	    intro_art          = document.querySelector('.intro__art').children,
-	    checklist          = document.querySelector('.checklist-cta__bg'),
-	    checklist_location = checklist.getBoundingClientRect(),
-	    dollar             = document.querySelector('.dollar-section'),
-	    dollar_location    = dollar.getBoundingClientRect(),
-	    key                = document.querySelector('.key-section'),
-	    key_location       = key.getBoundingClientRect(),
-	    question           = document.querySelector('.question-section'),
-	    question_location  = question.getBoundingClientRect(),
-	    isAnimited         = 'is--animated'
+	var isAnimated         = 'is--animated'
 	    isFloating         = 'is--floating';
 
 	var didScroll = false;
@@ -28,47 +15,9 @@
 	    }
 	}, 200);
 
-	function toggleAnimation() {
-		// Intro Animation
-		if(isInViewport(intro_location)) {
-			for (var i = 0; i < intro_art.length; i++) {
-				intro_art[i].classList.add(isFloating);
-			}
-		}
-		else{
-			for (var i = 0; i < intro_art.length; i++) {
-				intro_art[i].classList.remove(isFloating);
-			}
-		}
-		// Dollar Section
-		if(isInViewport(dollar_location)) {
-			dollar.querySelector('svg').classList.add(isAnimited);
-		}
-		// Key Section
-		if(isInViewport(key_location)) {
-			key.querySelector('svg').classList.add(isAnimited);
-		}
-		// Question Section
-		if(isInViewport(question_location)) {
-			question.querySelector('svg').classList.add(isAnimited);
-		}
-		// CTA Animation
-		if(isInViewport(checklist_location)){
-			checklist.classList.add(isFloating);
-		}
-		else{
-			checklist.classList.remove(isFloating);
-		}
-	}
-
 	function isInViewport(e){
 		return window.pageYOffset > e.top - (window.innerHeight * .75) && window.pageYOffset < e.bottom;
 	}
 
-	function topOfElement(e){
-		return e.top - (window.innerHeight *.75)
-	}
-
-	// Scroll handler to toggle classes.
 	window.addEventListener('scroll', checkScroll);
 </script>

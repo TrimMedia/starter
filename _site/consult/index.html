@@ -25,8 +25,7 @@
         <img src="https://s3.amazonaws.com/starter.design/assets/img/logo.svg" alt="Starter by Trimm logo">
       </h1>
       <h3>
-        Every design starts somewhere.<br>
-        We make sure it ends well.
+        Finally, check 'design' off your to-do list.
       </h3>
     </div>
     <div class="container">
@@ -174,46 +173,57 @@
   </section>
 </div>
 
-<footer>
+<section>
   <a href="" class='cta-circle__link'>
     <div class='cta-circle'>
       <span>Schedule your free consultation</span>
     </div>
   </a>
-</footer>
+</section>
 
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="338.3 -207.2 3443.5 1413.8" xml:space="preserve" class="main__art--footer">
-    <path class="blue" d="M2727.9,103c38.2-191.1,224.4-315,415.9-276.6c191.5,38.4,315.8,224.4,277.6,415.6
-      c-38.2,191.1-224.4,315-415.9,276.6C2814,480.2,2689.7,294.1,2727.9,103z"/>
-    <path class="red" d="M3272.8,231.1c26.6-133.2,156.4-219.5,289.9-192.7c133.5,26.7,220.1,156.4,193.5,289.6
-      c-26.6,133.2-156.4,219.5-289.9,192.7C3332.8,493.9,3246.2,364.3,3272.8,231.1z"/>
-    <path class="red" d="M1513,270.1c1.9-84,71.9-150.5,156.3-148.6c84.4,2,151.3,71.7,149.4,155.7c-1.9,84-71.9,150.5-156.3,148.6
-      C1578,423.8,1511.1,354.1,1513,270.1z"/>
-    <path class="red" d="M1095,889.2c3.4-149.6,127.9-268.1,278.1-264.6c150.2,3.5,269.2,127.6,265.8,277.3
-      c-3.4,149.6-127.9,268.1-278.1,264.6C1210.7,1162.9,1091.7,1038.8,1095,889.2z"/>
-    <path class="blue" d="M359.2,368.9c7.1-310.6,265.7-556.4,577.6-549.2c312,7.3,559.1,264.9,552.1,575.5
-      c-7.1,310.6-265.7,556.4-577.6,549.2C599.3,937,352.1,679.4,359.2,368.9z"/>
-    <circle class="blue" cx="1945.8" cy="624.3" r="438.1"/>
-    <circle class="red" cx="2708.1" cy="741.7" r="438.2"/>
-</svg>
+<script type="text/javascript">
+  var header             = document.querySelector('.pricing__header'),
+      header_location    = header.getBoundingClientRect()
+
+  function toggleAnimation() {
+   // Dollar Section
+    if(isInViewport(header_location)) {
+      header.querySelector('svg').classList.add(isFloating);
+    }else{
+      header.querySelector('svg').classList.remove(isFloating);
+    }
+  }
+</script>
 
 </article>
+			<footer>
+<div class="container">
+	<div class="one-half column offset-by-three">
+		<h3>Who are you?</h3>
+		<p>
+			Starter is a design studio helping startups and small businesses realize the impact of great design. We offer free <a href="/consult">consultations</a> and <a href="/checklist">resources</a> to make that possible. Feel free to <a href="mailto:contact@starter.design">contact us</a> anytime :)
+		</p>
+		<p class="hushed">© 2015 <a href="http://trim.media">Trim Media LLC</a></p>
+	</div>
+</div>
+</footer>
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="338.3 -207.2 3443.5 1413.8" xml:space="preserve" class="main__art--footer">
+			    <path class="blue" d="M2727.9,103c38.2-191.1,224.4-315,415.9-276.6c191.5,38.4,315.8,224.4,277.6,415.6
+			      c-38.2,191.1-224.4,315-415.9,276.6C2814,480.2,2689.7,294.1,2727.9,103z"/>
+			    <path class="red" d="M3272.8,231.1c26.6-133.2,156.4-219.5,289.9-192.7c133.5,26.7,220.1,156.4,193.5,289.6
+			      c-26.6,133.2-156.4,219.5-289.9,192.7C3332.8,493.9,3246.2,364.3,3272.8,231.1z"/>
+			    <path class="red" d="M1513,270.1c1.9-84,71.9-150.5,156.3-148.6c84.4,2,151.3,71.7,149.4,155.7c-1.9,84-71.9,150.5-156.3,148.6
+			      C1578,423.8,1511.1,354.1,1513,270.1z"/>
+			    <path class="red" d="M1095,889.2c3.4-149.6,127.9-268.1,278.1-264.6c150.2,3.5,269.2,127.6,265.8,277.3
+			      c-3.4,149.6-127.9,268.1-278.1,264.6C1210.7,1162.9,1091.7,1038.8,1095,889.2z"/>
+			    <path class="blue" d="M359.2,368.9c7.1-310.6,265.7-556.4,577.6-549.2c312,7.3,559.1,264.9,552.1,575.5
+			      c-7.1,310.6-265.7,556.4-577.6,549.2C599.3,937,352.1,679.4,359.2,368.9z"/>
+			    <circle class="blue" cx="1945.8" cy="624.3" r="438.1"/>
+			    <circle class="red" cx="2708.1" cy="741.7" r="438.2"/>
+			</svg>
 		</main>
 		<script type="text/javascript">
-	// Grab as much info as possible 
-	// outside the scroll handler for performace reasons.
-	var intro              = document.querySelector('.intro'),
-	    intro_location     = intro.getBoundingClientRect(),
-	    intro_art          = document.querySelector('.intro__art').children,
-	    checklist          = document.querySelector('.checklist-cta__bg'),
-	    checklist_location = checklist.getBoundingClientRect(),
-	    dollar             = document.querySelector('.dollar-section'),
-	    dollar_location    = dollar.getBoundingClientRect(),
-	    key                = document.querySelector('.key-section'),
-	    key_location       = key.getBoundingClientRect(),
-	    question           = document.querySelector('.question-section'),
-	    question_location  = question.getBoundingClientRect(),
-	    isAnimited         = 'is--animated'
+	var isAnimated         = 'is--animated'
 	    isFloating         = 'is--floating';
 
 	var didScroll = false;
@@ -229,48 +239,10 @@
 	    }
 	}, 200);
 
-	function toggleAnimation() {
-		// Intro Animation
-		if(isInViewport(intro_location)) {
-			for (var i = 0; i < intro_art.length; i++) {
-				intro_art[i].classList.add(isFloating);
-			}
-		}
-		else{
-			for (var i = 0; i < intro_art.length; i++) {
-				intro_art[i].classList.remove(isFloating);
-			}
-		}
-		// Dollar Section
-		if(isInViewport(dollar_location)) {
-			dollar.querySelector('svg').classList.add(isAnimited);
-		}
-		// Key Section
-		if(isInViewport(key_location)) {
-			key.querySelector('svg').classList.add(isAnimited);
-		}
-		// Question Section
-		if(isInViewport(question_location)) {
-			question.querySelector('svg').classList.add(isAnimited);
-		}
-		// CTA Animation
-		if(isInViewport(checklist_location)){
-			checklist.classList.add(isFloating);
-		}
-		else{
-			checklist.classList.remove(isFloating);
-		}
-	}
-
 	function isInViewport(e){
 		return window.pageYOffset > e.top - (window.innerHeight * .75) && window.pageYOffset < e.bottom;
 	}
 
-	function topOfElement(e){
-		return e.top - (window.innerHeight *.75)
-	}
-
-	// Scroll handler to toggle classes.
 	window.addEventListener('scroll', checkScroll);
 </script>
 	</body>
