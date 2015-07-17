@@ -78,10 +78,15 @@ a{
 	a:focus{
 		color: #52CBC9;
 	}
-	.hushed a{
+	.hushed a,
+	.pricing__table a{
 		text-decoration: none;
 		color: inherit;
 	}
+		.pricing__table a:hover,
+		.pricing__table a:focus{
+			color: #ff6669;
+		}
 
 .hushed{
 	opacity: .8;
@@ -131,7 +136,13 @@ h3{
 .pricing__header p{
 	margin: 12em 0;
 	color: white;
+	font-weight: bold;
 }
+	@media (min-width: 600px) {
+		.pricing__header p{
+			font-weight: normal;
+		}
+	}
 
 .pricing__header .logo{
 	margin-top: 3em;
@@ -187,7 +198,7 @@ input[type='submit']{
 }
 	@keyframes pulse {
     	from { transform: scale(1); }
-    	to   { transform: scale(1.05);}
+    	to   { transform: scale(.95);}
 	}
 
 .cta-circle span{
@@ -457,6 +468,49 @@ svg > *{
 	background: #FE6669;
 	animation: 10s ease infinite;
 }
+
+.preview{
+	position: fixed;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 10;
+	transition: all .3s ease;
+}
+
+.is--hidden{
+	transform: translateY(-100%);
+	background: rgba(255, 255, 255, 0);
+}
+
+.preview__img{
+	position: absolute;
+	max-width: 95vw;
+	max-height: 95vh;
+	display: block;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.preview__close-btn{
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	background: white;
+	color: #b3b3b3;
+	border: 3px solid #b3b3b3;
+	padding: .5em 1em;
+	border-radius: 50px;
+	font-weight: 600;
+	z-index: 11;
+}
+	@media (min-width: 600px) {
+		.preview__close-btn{
+			top: 1em;
+			bottom: auto;
+		}
+	}
 
 .is--floating,
 .is--floating > *{
