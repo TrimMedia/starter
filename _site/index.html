@@ -227,9 +227,9 @@
 
   function openPreview(){
     event.preventDefault();
-    preview.classList.remove('is--hidden');
     previewImg.src = this.href;
     ga('send', 'event', 'deliverable', 'click', this.innerHTML);
+    preview.classList.remove('is--hidden');
   }
 
   function closePreview(){
