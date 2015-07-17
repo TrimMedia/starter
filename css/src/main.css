@@ -7,19 +7,14 @@
 html{
 	font-family: "sofia-pro", sans-serif;
 	font-weight: lighter;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.5em;
 	color: #696969;
 	text-rendering: optimizeLegibility;
  	font-smoothing: antialiased;
 }
-	@media (min-width: 600px) {
-		html{
-			font-size: 16px;
-		}
-	}
 
-	@media (min-width: 800px) {
+	@media (min-width: 700px) {
 		html{
 			font-size: 18px;
 		}
@@ -41,7 +36,7 @@ main{
 }
 
 .intro__section{
-	margin: 5rem 0 10rem;
+	margin: 7.5rem 0 10rem;
 }
 	@media (min-width: 600px) {
 		.intro__section{
@@ -103,7 +98,7 @@ h1, h2, h3{
 h1{
 	font-size: 5rem;
 	line-height: .9em;
-	padding-top: 1em;
+	padding-top: .5em;
 }
 	.logo h1{
 		padding: 0;
@@ -134,10 +129,15 @@ h3{
 	}
 
 .pricing__header p{
-	margin: 12em 0;
+	margin: 8em 0;
 	color: white;
 	font-weight: bold;
 }
+	@media (min-width: 400px) {
+		.pricing__header p{
+			margin: 12em 0;
+		}
+	}
 	@media (min-width: 600px) {
 		.pricing__header p{
 			font-weight: normal;
@@ -153,6 +153,20 @@ h3{
 	list-style-type: none;
 	font-weight: bold;
 }
+
+.pricing__table a{
+	display: block;
+	width: auto;
+	padding: .25em .5em;
+	margin: .25em 0;
+	border-radius: 100px;
+	background: rgba(179, 179, 179, 0.1);
+	transition: all .2s ease;
+}
+	.pricing__table a:hover,
+	.pricing__table a:focus{
+		background: rgba(255, 102, 105, 0.1);
+	}
 
 input{
 	box-sizing: border-box;
@@ -173,13 +187,13 @@ input{
 input[type='submit']{
 	background: #ff6669;
 	color: white;
+	font-weight: bolder;
 	border-color: #ff6669;
 	transition: all .3s ease-in;
-	text-rendering: optimizeLegibility;
- 	font-smoothing: antialiased;
 }
 	input[type='submit']:hover{
-		animation: pulse .75s ease-out infinite alternate;
+		background: rgba(255, 102, 105, 0.1);
+		color: #ff6669;
 	}
 
 .cta-circle__link{
@@ -193,7 +207,7 @@ input[type='submit']{
 	background: #ff6669;
 	color: white;
 	border-radius: 100%;
-	margin: 2.5em auto;
+	margin: 2.5em auto 4em;
 	animation: pulse 1.5s ease-in-out alternate infinite;
 }
 	@keyframes pulse {
@@ -319,9 +333,9 @@ svg > *{
 	}
 
 .pricing__art--intro{
-	width: 300%;
+	width: 400%;
 	min-width: 1000px;
-  	top: -3.5em;
+  	top: -6em;
 	left: 30%;
 	transform: translateX(-50%);
 }
@@ -330,16 +344,24 @@ svg > *{
 			top: -4em;
 		}
 	}
+	@media (min-width: 500px) {
+		.pricing__art--intro{
+			top: -7em;
+		}
+	}
 	@media (min-width: 600px) {
 		.pricing__art--intro{
-			width: 400%;
 			top: 2.5em;
 			left: 40%;
 		}
 	}
 	@media (min-width: 700px) {
 		.pricing__art--intro{
-			width: 400%;
+			top: 3em;
+		}
+	}
+	@media (min-width: 800px) {
+		.pricing__art--intro{
 			top: 0em;
 		}
 	}
@@ -427,19 +449,19 @@ svg > *{
 	width: 35rem;
 	padding-bottom: 35rem;
 	top: 18em;
-	right: 1em;
+	right: -2em;
 	background: #FE6669;
 	animation-name: inherit;
 	animation: 12.5s ease infinite;
 }
 	@media (min-width: 400px) {
 		.intro__circle--section{
-			right: 12.5%;
+			right: 0;
 		}
 	}
 	@media (min-width: 600px) {
 		.intro__circle--section{
-			top: 13em;
+			top: 12em;
 			right: -7.5em;
 		}
 	}
@@ -447,7 +469,7 @@ svg > *{
 		.intro__circle--section{
 			width: 37.5rem;
 			padding-bottom: 37.5rem;
-			top: 10em;
+			top: 8em;
 			right: -5em;
 		}
 	}
@@ -497,20 +519,45 @@ svg > *{
 	position: absolute;
 	bottom: 1em;
 	right: 1em;
-	background: white;
-	color: #b3b3b3;
-	border: 3px solid #b3b3b3;
+	height: 10vw;
+	width: 10vw;
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 80px;
+	max-height: 80px;
+	background: #ff6669;
+	color: white;
+	border: 3px solid white;
 	padding: .5em 1em;
-	border-radius: 50px;
+	border-radius: 80px;
 	font-weight: 600;
 	z-index: 11;
 }
+	.preview__close-btn:before,
+	.preview__close-btn:after{
+		content: '';
+		display: block;
+		position: absolute;
+		background: white;
+		top: 50%;
+		left: 50%;
+		height: 5px;
+		width: 50%;
+		border-radius: 100px;
+	}
+	.preview__close-btn:before{
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+	.preview__close-btn:after{
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
 	@media (min-width: 600px) {
 		.preview__close-btn{
 			top: 1em;
 			bottom: auto;
 		}
 	}
+
 
 .is--floating,
 .is--floating > *{
