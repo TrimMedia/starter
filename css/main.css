@@ -655,15 +655,10 @@ h3{
 	}
 
 .pricing__header p{
-	margin: 8em 0;
+	margin: 12em 0;
 	color: white;
 	font-weight: bold;
 }
-	@media (min-width: 400px) {
-		.pricing__header p{
-			margin: 12em 0;
-		}
-	}
 	@media (min-width: 600px) {
 		.pricing__header p{
 			font-weight: normal;
