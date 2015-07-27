@@ -860,11 +860,16 @@ svg > *{
 .pricing__art--intro{
 	width: 400%;
 	min-width: 1000px;
-  	top: -6em;
+  	top: -2em;
 	left: 30%;
 	transform: translateX(-50%);
 }
-	@media (min-width: 400px) {
+	@media (min-width: 375px) {
+		.pricing__art--intro{
+			top: -6em;
+		}
+	}
+	@media (min-width: 480px) {
 		.pricing__art--intro{
 			top: -4em;
 		}
