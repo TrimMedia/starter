@@ -192,8 +192,6 @@ title: Helping startups understand the importance of design - Starter - Design C
   var intro              = document.querySelector('.intro'),
       intro_location     = intro.getBoundingClientRect(),
       intro_art          = document.querySelector('.intro__art').children,
-      checklist          = document.querySelector('.checklist-cta__bg'),
-      checklist_location = checklist.getBoundingClientRect(),
       dollar             = document.querySelector('.dollar-section'),
       dollar_location    = dollar.getBoundingClientRect(),
       key                = document.querySelector('.key-section'),
@@ -221,12 +219,18 @@ title: Helping startups understand the importance of design - Starter - Design C
     if(isInViewport(question_location)) {
       question.querySelector('svg').classList.add(isAnimated);
     }
-    if(isInViewport(checklist_location)){
-      checklist.classList.add(isFloating);
-    }
-    else{
-      checklist.classList.remove(isFloating);
-    }
   }
+</script>
+
+<script>
+  var cta = document.querySelector('.cta-circle__link'),
+      ctaForm = document.querySelector('.cta__form');
+
+  cta.addEventListener('click', function(){
+    console.log("clicked!");
+    ctaForm.classList.remove('cta__form--hidden');
+    cta.classList.add('cta-circle--hidden');
+  });
+
 </script>
 

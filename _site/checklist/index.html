@@ -191,41 +191,38 @@
 </section>
 
 <section class="checklist-cta container">
-	<div>
-		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="477.1 -380.5 4107.2 1762" style="enable-background:new 477.1 -380.5 4107.2 1762;" xml:space="preserve" class="checklist-cta__bg">
-			<style type="text/css">
-				.st0{fill:none;stroke:#52CCCA;stroke-width:21;}
-				.st1{fill:none;stroke:#FF6669;stroke-width:21;}
-				.st2{fill:none;stroke:#B3B3B3;stroke-width:21;}
-			</style>
-			<circle class="st0" cx="3275.5" cy="-16" r="278.5"/>
-			<circle class="st1" cx="3452.5" cy="888" r="278.5"/>
-			<circle class="st1" cx="787.4" cy="864.3" r="278.5"/>
-			<circle class="st2" cx="3952.5" cy="260" r="609.5"/>
-			<circle class="st2" cx="1670.8" cy="115.3" r="278.5"/>
-			<circle class="st0" cx="1392.1" cy="710.8" r="516.5"/>
-			<circle class="st1" cx="2530.7" cy="499.5" r="778"/>
-		</svg>
-	</div>
 	<div class="one-half column offset-by-three">
-		<h2>Get the free Starter Design Checklist</h2>
-		<p>
-		Just type in a valid email, hit submit, and we’ll send a PDF version of the Starter Design Checklist outlining the important design assets every startup needs.
-		</p>
-		<div id="mc_embed_signup">
-			<form action="//unfold.us8.list-manage.com/subscribe/post?u=cb388a02c76af421ba56300e8&amp;id=65d6c064e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			    <div id="mc_embed_signup_scroll">
-					<div class="mc-field-group">
-						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='email@domain.com' onclick="ga('send', 'event', 'input', 'click', 'checklist-email');">
-					</div>
-					<div id="mce-responses" class="clear">
-						<div class="response" id="mce-error-response" style="display:none"></div>
-						<div class="response" id="mce-success-response" style="display:none"></div>
-					</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_cb388a02c76af421ba56300e8_65d6c064e0" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Get your free checklist!" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="ga('send', 'event', 'button', 'click', 'checklist-btn');"></div>
-			    </div>
-			</form>
+		<a href="https://s3.amazonaws.com/starter.design/assets/starter_design_checklist.pdf" class='cta-circle__link' target="_blank" onclick="ga('send', 'event', 'download', 'click', 'checklist');">
+			<div class='cta-circle'>
+			  <span>Download your<br>free checklist!</span>
+			</div>
+		</a>
+		<div class="cta__form cta__form--hidden">
+			<h2>Thanks for downloading!</h2>
+			<p>
+				If you found the <strong>Starter Design Checklist</strong> valuable and would like to see more from us in the future, sign up for our newsletter below. 
+				<br><br>Thanks again,
+				<br>Andrew & Kevin
+			</p>
+			<div id="mc_embed_signup">
+				<form action="//unfold.us8.list-manage.com/subscribe/post?u=cb388a02c76af421ba56300e8&amp;id=65d6c064e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+						<div class="mc-field-group">
+							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='email@domain.com' onclick="ga('send', 'event', 'input', 'click', 'checklist-email');">
+						</div>
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>
+					    <div style="position: absolute; left: -5000px;">
+					    	<input type="text" name="b_cb388a02c76af421ba56300e8_65d6c064e0" tabindex="-1" value="">
+					    </div>
+					    <div class="clear">
+					    	<input type="submit" value="Subscribe to the newsletter!" name="subscribe" id="mc-embedded-subscribe" class="button" onclick="ga('send', 'event', 'button', 'click', 'checklist-btn');">
+					    </div>
+				    </div>
+				</form>
+			</div>
 		</div>
 	</div>
 </section>
@@ -248,8 +245,6 @@
   var intro              = document.querySelector('.intro'),
       intro_location     = intro.getBoundingClientRect(),
       intro_art          = document.querySelector('.intro__art').children,
-      checklist          = document.querySelector('.checklist-cta__bg'),
-      checklist_location = checklist.getBoundingClientRect(),
       dollar             = document.querySelector('.dollar-section'),
       dollar_location    = dollar.getBoundingClientRect(),
       key                = document.querySelector('.key-section'),
@@ -277,13 +272,19 @@
     if(isInViewport(question_location)) {
       question.querySelector('svg').classList.add(isAnimated);
     }
-    if(isInViewport(checklist_location)){
-      checklist.classList.add(isFloating);
-    }
-    else{
-      checklist.classList.remove(isFloating);
-    }
   }
+</script>
+
+<script>
+  var cta = document.querySelector('.cta-circle__link'),
+      ctaForm = document.querySelector('.cta__form');
+
+  cta.addEventListener('click', function(){
+    console.log("clicked!");
+    ctaForm.classList.remove('cta__form--hidden');
+    cta.classList.add('cta-circle--hidden');
+  });
+
 </script>
 
 </article>
